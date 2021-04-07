@@ -1,0 +1,7 @@
+ACTION=="add", ATTR{idVendor}=="03c3", RUN+="/bin/sh -c '/bin/echo 256 >/sys/module/usbcore/parameters/usbfs_memory_mb'"
+# All ASI Cameras and filter wheels
+SUBSYSTEMS=="usb", ATTR{idVendor}=="03c3", MODE="0666"
+# EFW
+KERNEL=="hidraw*", ATTRS{idVendor}=="03c3", ATTRS{idProduct}=="1f01", MODE="0666"
+# EAF
+KERNEL=="hidraw*", ATTRS{idVendor}=="03c3", ATTRS{idProduct}=="1f10", MODE="0666"
